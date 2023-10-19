@@ -2,7 +2,9 @@ package br.com.cursoudemy.productapi.modules.produto.model;
 
 import javax.persistence.*;
 
+import br.com.cursoudemy.productapi.modules.produto.dto.CategoryRequestDto;
 import lombok.*;
+import org.springframework.beans.BeanUtils;
 
 @Getter
 @Setter
@@ -18,4 +20,11 @@ public class Category {
 
     @Column(name = "DESCRIPTION", nullable = false)
     private String description;
+
+    public static Category of(CategoryRequestDto request) {
+        var category = new Category();
+        BeanUtils.copyProperties(request, category);
+
+        return category;
+    }
 }

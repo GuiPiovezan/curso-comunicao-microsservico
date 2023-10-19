@@ -30,11 +30,12 @@ services:
     environment:
       - MONGO_INITDB_DATABASE=sales-db
       - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=secret
+      - MONGO_INITDB_ROOT_PASSWORD=e296cd9f
     ports:
       - 27017:27017
 
   auth-api:
+    image: auth-api
     build: './auth-api'
     container_name: auth-api
     environment:
@@ -43,6 +44,7 @@ services:
       - 8080:8080
 
   product-api:
+    image: product-api
     build: './product-api'
     container_name: product-api
     environment:
@@ -51,6 +53,7 @@ services:
       - 8081:8081
 
   sales-api:
+    image: sales-api
     build: './sales-api'
     container_name: sales-api
     environment:
