@@ -34,14 +34,14 @@ services:
     ports:
       - 27017:27017
 
-  auth-api:
-    image: auth-api
-    build: './auth-api'
-    container_name: auth-api
-    environment:
-      - PORT=8080
-    ports:
-      - 8080:8080
+  # auth-api:
+  #   image: auth-api
+  #   build: './auth-api'
+  #   container_name: auth-api
+  #   environment:
+  #     - PORT=8080
+  #   ports:
+  #     - 8080:8080
 
   product-api:
     image: product-api
