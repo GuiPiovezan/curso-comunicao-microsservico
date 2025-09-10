@@ -6,11 +6,9 @@ const app = express();
 const env = process.env;
 const PORT = env.PORT || 8080;
 
-initialConfigData.createInitialData();
+// initialConfigData.createInitialData();
 
 app.use(express.json());
-
-app.use(userRoutes);
 
 app.get('/api/status', (req, res) => {
   return res.status(200).json({
@@ -20,6 +18,7 @@ app.get('/api/status', (req, res) => {
     httpStatus: 200,
   });
 });
+app.use(userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
