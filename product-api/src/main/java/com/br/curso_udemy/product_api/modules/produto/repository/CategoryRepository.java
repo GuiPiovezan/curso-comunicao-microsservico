@@ -1,0 +1,6 @@
+package com.br.curso_udemy.product_api.modules.produto.repository;
+
+import com.br.curso_udemy.product_api.modules.produto.model.entities.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategoryRepository extends JpaRepository<Category, Integer> { }
